@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .piece{
+            margin-top:100px;
+            margin-left:400px;
+            width:400px;
+            height:400px;
+            position:absolute;
+
+        }
+        .piece1{
+            background:red;
+
+            transform:rotateY(0deg) translateZ(485px);
+        }
+        .piece2{
+            background:green;
+            transform:rotateY(45deg) translateZ(485px) ;
+
+        }
+        .piece3{
+            background:blue;
+            transform:rotateY(90deg) translateZ(485px);
+        }
+        .piece4{
+            background:black;
+            transform:rotateY(135deg) translateZ(485px);
+        }
+        .piece5{
+            background:hotpink;
+            transform:rotateY(180deg) translateZ(485px);
+        }
+        .piece6{
+            background:skyblue;
+            transform:rotateY(225deg) translateZ(485px);
+
+        }
+        .piece7{
+            background:gray;
+            transform:rotateY(270deg) translateZ(485px);
+        }
+        .piece8{
+            background:yellow;
+            transform:rotateY(315deg) translateZ(485px);
+        }
+        .box{
+            transform-style:preserve-3d;
+            perspective:1500px;
+        }
+     </style>
+    <body>
+<div class="contain">
+    <div class="box">
+        <div class="piece1 piece"></div>
+        <div class="piece2 piece"></div>
+        <div class="piece3 piece"></div>
+        <div class="piece4 piece"></div>
+        <div class="piece5 piece"></div>
+        <div class="piece6 piece"></div>
+        <div class="piece7 piece"></div>
+        <div class="piece8 piece"></div>
+    </div>
+</div>
+</body>
+</html>

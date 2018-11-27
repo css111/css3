@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap{
+            width:100px;
+            height:100px;
+            background:url('../picture/111.jpg') no-repeat;
+            background-size:contain;
+           margin-top:200px;
+
+            /*关于角度单位：deg；grad(百分度，一个圆是400grad)；rad（弧度，一个圆是2∏弧度); turn(圈数,一个圆是1turn)*/
+            /*元素旋转之后，坐标系也跟着旋转60deg*/
+            transform:rotate(60deg);
+            -ms-transform:rotate(60deg);/* IE 9 */
+            -moz-transform:rotate(60deg); 	/* Firefox */
+            -webkit-transform:rotate(60deg); /* Safari 和 Chrome */
+            -o-transform:rotate(60deg); 	/* Opera */
+
+            /*过渡，transform属性在1s之内过渡*/
+            transition:transform 1s ease;
+            -webkit-transition:tarnsform 1s ease; /* Safari 和 Chrome *transform 1s ease
+            -moz-transition:transform 1s ease; /* Firefox 4 */
+            -o-transition:transform 1s ease; /* Opera */
+        }
+       .fly{
+           transform:rotate(60deg) translate(0,-300px);
+           -ms-transform:rotate(60deg) translate(0,-300px);/* IE 9 */
+           -moz-transform:rotate(60deg) translate(0,-300px); 	/* Firefox */
+           -webkit-transform:rotate(60deg) translate(0,-300px); /* Safari 和 Chrome */
+           -o-transform:rotate(60deg) translate(0,-300px); 	/* Opera */
+        }
+
+
+        .con{
+            width:100px;
+            height:100px;
+            border:1px solid hotpink;
+            margin:100px auto;
+            transition:transform 1s ease;
+        }
+        .con:hover{
+            /*3d   perspective:可认为是人眼离电脑屏幕在z轴上的距离,也可在父元素上设置perspective  eg: .box{persperctive:1000px};*/
+            transform:perspective(1000px) translate3d(10px, -20px, 100px);
+        }
+
+
+        .cube{
+            margin:0 auto;
+            position:relative;
+            width:100px;
+            height:100px;
+            perspective:300px;
+            transform-style:preserve-3d;
+            /*transform:不会影响原始的布局*/
+            transform:rotateX(-10deg) rotateY(20deg);
+        }
+        .cube>div{
+            width:100px;
+            height:100px;
+            border:1px solid skyblue;
+            position:absolute;
+            text-align:center;
+            line-height:100px;
+            opacity:0.7;
+        }
+        .cube .right{
+            /*元素旋转90deg，元素的坐标系同样旋转90deg*/
+            transform:rotateY(90deg) translateZ(50px);
+            background:red;
+        }
+        .cube .left{
+            /*元素旋转90deg，元素的坐标系同样旋转90deg*/
+            transform:rotateY(90deg) translateZ(-50px);
+            background:green;
+        }
+        .cube .top{
+            /*元素旋转90deg，元素的坐标系同样旋转90deg*/
+            transform:rotateX(90deg) translateZ(50px);
+            background:yellow;
+        }
+        .cube .bottom{
+            /*元素旋转90deg，元素的坐标系同样旋转90deg*/
+            transform:rotateY(90deg) translateZ(-50px);
+            background:blue;
+        }
+        .cube .front{
+            /*元素旋转90deg，元素的坐标系同样旋转90deg*/
+            transform:translateZ(50px);
+            background:purple;
+        }
+        .cube .back{
+            /*元素旋转90deg，元素的坐标系同样旋转90deg*/
+            transform:translateZ(-50px);
+            background:black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="wrap"></div>
+<script>
+        document.querySelector('.wrap').addEventListener('click',function(e){
+            this.className+=' fly';
+        });
+</script>
+
+<div class="box">
+    <div class="con"></div>
+</div>
+
+<div class="cube">
+    <div class="left">左</div>
+    <div class="right">右</div>
+    <div class="top">上</div>
+    <div class="bottom">下</div>
+    <div class="front">前</div>
+    <div class="back">后</div>
+</div>
+</body>
+</html>
